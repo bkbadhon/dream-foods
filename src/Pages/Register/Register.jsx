@@ -48,7 +48,6 @@ const Register = () => {
         }
         createUser(email, password, name, photo)
         .then(result =>{
-            console.log(result.user)
             setSuccess('Register Successfull')   
         })
 
@@ -59,7 +58,6 @@ const Register = () => {
 
        
 
-        console.log(createUser)
     }
     return (
         <div className='bg-base-200 py-4'>

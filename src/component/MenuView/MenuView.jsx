@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import useAxios, { AxiosSource } from "../Axios/useAxios";
 import { IoStar } from "react-icons/io5";
@@ -6,14 +6,19 @@ import { FaArrowAltCircleRight, FaFacebook, FaInstagram, FaShare, FaTwitter, FaW
 import Rating from "react-rating";
 import { IoIosStar } from "react-icons/io";
 import { CiStar } from "react-icons/ci";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
+import useCart from "../Hook/useCart";
 
 const MenuView = () => {
   const [menus, setMenus] = useState([]);
-
+  const [, refetch] =useCart()
   const axiosLink = useAxios(AxiosSource);
 
   // const [phones, setPhones] = useState([]);
   const { id } = useParams();
+
+  const {user} = useContext(AuthContext)
 
   useEffect(() => {
     axiosLink
@@ -42,6 +47,82 @@ const MenuView = () => {
     const [rating, setRating] = useState(0);
     const textRef = useRef()
 
+
+    const handleCart =()=>{
+      if(user && user.email){
+       const cartItem = {
+         menuId: menus._id,
+         email: user.email,
+         name: menus.name,
+         price: menus.price,
+         photo: menus.photo,
+         menu: menus.menu,
+         details: menus.details,
+         quantity: quantity,
+
+       }
+       axiosLink
+        .post("/cart", cartItem)
+        .then((res) => {
+          console.log(res);
+          if (res.data.insertedId) {
+            refetch()
+            Swal.fire({
+              title: "Good job!",
+              text: `${menus.name} Added to Cart`,
+              icon: "success",
+            });
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      }
+      }
+
+    
+  const handleReview = (e) =>{
+    e.preventDefault()
+    if (user && user.email) {
+      
+      const reviewItem = {
+        menuId: menus._id,
+        userName: user?.displayName,
+        email: user.email,
+        userPhoto: user?.photoURL,
+        name: menus.name,
+        price: menus.price,
+        photo: menus.photo,
+        menu: menus.menu,
+        rating: rating,
+        comment :textRef.current.value,
+
+      }
+      console.log(reviewItem)
+      axiosLink
+        .post("/reviews", reviewItem)
+        .then((res) => {
+          console.log(res);
+          if (res.data.insertedId) {
+            Swal.fire({
+              title: "Good job!",
+              text: `${menus.name} Added your review`,
+              icon: "success",
+            });
+            refetch();
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
+
+  const [review, setReview] =useState([])
+
+  axiosLink.get('/reviews')
+  .then(res => setReview(res.data.filter(item=> item.menuId == id)))
+  .catch(err=> console.log(err))
   return (
     <div className="w-11/12 mx-auto my-4">
       <div className="card-title px-4 md:text-2xl my-8 text-xl font-bold">
@@ -71,10 +152,10 @@ const MenuView = () => {
           </div>
           <h2 className="mb-4">{menus.details}</h2>
           <div className="mb-4 flex gap-4">
-            <h2 className="line-through text-2xl text-gray-400">
-              ${menus.price - 4}
+            <h2 className=" text-2xl font-semibold">
+              ${menus.price - 3.00}
             </h2>
-            <h2 className="font-semibold text-2xl">${menus.price}</h2>
+            <h2 className="font-semibold line-through text-gray-400 text-2xl">${menus.price}</h2>
           </div>
           <h2 className="text-lg mb-4 font-semibold">Quantity :</h2>
           <div className="flex mb-8 gap-2">
@@ -105,7 +186,7 @@ const MenuView = () => {
             <FaInstagram className="text-2xl"/>
             <FaTwitter className="text-2xl"/>
           </div>
-          <button className="w-full font-semibold p-2 duration-700 hover:bg-[#7E8EF1] text-center text-white bg-[#615EFC]">Add To Cart</button>
+          <button onClick={handleCart} className="w-full font-semibold p-2 duration-700 hover:bg-[#7E8EF1] text-center text-white bg-[#615EFC]">Add To Cart</button>
         </div>
       </div>
       <div>
@@ -131,9 +212,25 @@ const MenuView = () => {
         <div>
           <h2 className="mb-2 text-xl font-semibold mt-2">Write your comment here :</h2>
           <textarea className="border-2 border-[#615EFC] outline-none mb-2 h-20 w-full" ref={textRef} placeholder="Write...." name="textarea" id=""></textarea>
-          <button className="p-2 rounded-xl bg-[#615EFC] text-white font-semibold duration-700 hover:bg-[#7E8EF1]">Submit</button>
+          <button onClick={handleReview} className="p-2 rounded-xl bg-[#615EFC] text-white font-semibold duration-700 hover:bg-[#7E8EF1]">Submit</button>
         </div>
       </div>
+      </div>
+      <div className="ml-8 mb-4">
+        <h2 className="text-xl mb-4 text-[#615EFC]">Others Feedback :</h2>
+        {
+          review.map((item,_id)=>
+          <div className="my-4 mb-" key={_id}>
+            <div className="flex gap-2 items-center">
+              <img className="w-8 h-8 rounded-full object-cover" src={item.userPhoto} alt="" />
+              <div>
+                <h2 className="text-lg font-semibold">{item.userName}</h2>
+                <h2 className="text-xs">{item.comment}</h2>
+              </div>
+            </div>
+          </div>
+          )
+        }
       </div>
     </div>
   );

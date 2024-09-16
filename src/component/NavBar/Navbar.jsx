@@ -3,12 +3,13 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../public/logo.png'
 import { IoCartOutline } from 'react-icons/io5';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useCart from '../Hook/useCart';
 
 const Navbar = () => {
   const {user, logOut} = useContext(AuthContext)
+  const [ cart] =useCart()
 
   const [showLogout, setShowLogout] = useState(false);
-  console.log(user)
   const handleLogout = ()=>{
         logOut()
         setShowLogout(false)
@@ -75,14 +76,14 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex md:flex">
         <ul className="menu bg-[#615EFC] menu-horizontal px-5">{navLinks}</ul>
       </div>
-      <div className="navbar-end ">
+      <div className="navbar-end mr-4">
         <div className="relative mr-4 flex justify-center items-center">
           <button className=" flex justify-center items-center">
           <Link to={'/cart'}>
             <IoCartOutline className="text-3xl text-white" />
           </Link>
           </button>
-            {/* <div className="badge absolute text-white -right-2 -top-2 bg-orange-700 p-1">+{cart.length}</div> */}
+            <div className="badge absolute text-black -right-2 -top-2 bg-white p-1">+{cart.length}</div>
 
         </div>
         {/* {user ? (
