@@ -130,11 +130,11 @@ const MenuView = () => {
           Foods / {menus.menu} / {menus.name}
         </h2>
       </div>
-      <div className="flex justify-around my-8 items-center lg:gap-24 gap-8">
-        <div className="w-1/2 bg-gray-200 shadow-lg rounded-xl">
+      <div className="md:flex justify-around my-8 items-center lg:gap-24 gap-8">
+        <div className="md:w-1/2 bg-gray-200 shadow-lg rounded-xl">
           <img className="p-16" src={menus.photo} alt="" />
         </div>
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <h2 className="text-2xl text-center font-semibold uppercase">
             {menus.menu} / {menus.name}
           </h2>

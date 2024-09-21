@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useAxios, { AxiosSource } from "../../component/Axios/useAxios";
 
 const Login = () => {
 
     const {logIn}= useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
+    const axiosLink = useAxios(AxiosSource)
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -16,6 +18,17 @@ const Login = () => {
         const password = form.get('password');
         logIn(email, password)
         .then(result =>{
+          const userData ={
+            name:result.user?.displayName,
+            email:result.user?.email,
+          }
+          axiosLink.post('/users', userData)
+          .then(res=>{
+            console.log(res.data)
+          })
+          .catch(err=>{
+            console.log(err)
+          })
             Swal.fire('Good job!','You logged in!','success')
             console.log(result.user)
             navigate(location?. state? location.state : "/" )

@@ -5,12 +5,14 @@ import { app } from '../../Firebase/Firebase.config';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { signInWithPopup } from "firebase/auth";
 import Swal from "sweetalert2";
+import useAxios, { AxiosSource } from '../../component/Axios/useAxios';
 
 const Register = () => {
 
     const [registerError, setRegisterError]= useState('')
     const [success, setSuccess]= useState('')
     const auth = getAuth(app)
+    const axiosLink =useAxios(AxiosSource)
     const provider = new GoogleAuthProvider();
     const location = useLocation()
     const navigate = useNavigate()
@@ -23,7 +25,17 @@ const Register = () => {
             console.log(result)
             Swal.fire('Good job!','You logged in!','success')
             navigate(location?. state? location.state : "/" )
-            
+            const userData ={
+              name:result.user?.displayName,
+              email:result.user?.email,
+            }
+            axiosLink.post('/users', userData)
+            .then(res=>{
+              console.log(res.data)
+            })
+            .catch(err=>{
+              console.log(err)
+            })
         })
         .catch(error =>{
             console.log(error)
@@ -48,6 +60,7 @@ const Register = () => {
         }
         createUser(email, password, name, photo)
         .then(result =>{
+          
             setSuccess('Register Successfull')   
         })
 

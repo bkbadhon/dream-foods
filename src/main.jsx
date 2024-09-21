@@ -21,6 +21,8 @@ import {
 import Order from './Pages/Order/Order.jsx';
 import Payment from './Pages/Order/Payment.jsx';
 import Checkout from './Pages/Checkout/Checkout.jsx';
+import Dashboard from './Pages/Dashboard/Dashboard.jsx';
+import Users from './Pages/Dashboard/Users.jsx';
 
 const queryClient = new QueryClient()
 
@@ -69,11 +71,22 @@ const router = createBrowserRouter([
         path:'/register',
         element: <Register></Register>
       },
+      
 
      
 
     ]
   },
+  {
+    path:'/dashboard',
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+        path:'/dashboard/users',
+        element:<Users></Users>
+      }
+    ]
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(

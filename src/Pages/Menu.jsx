@@ -105,7 +105,7 @@ const Menu = () => {
         <div className="divider divider-primary"></div>
       </div>
 
-      <div className="w-11/12 mx-auto justify-center grid grid-cols-5 gap-16 items-center">
+      <div className="w-11/12 mx-auto justify-center grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 md:gap-16 items-center">
         {filterMenu.map((item, index) => (
           <div key={index}>
             <div className="shadow-lg rounded-xl my-4 p-4 mx-auto">

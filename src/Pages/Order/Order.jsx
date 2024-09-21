@@ -92,8 +92,8 @@ const Order = () => {
                 <FaCcMastercard className=' text-[#615EFC] text-5xl' />
             </div>
 
-            <div className='flex gap-4'>
-                <div className='w-1/2 mx-auto'>
+            <div className=' gap-4'>
+                <div className='md:w-1/2 mx-auto'>
                     <h1 className='text-2xl ml-4 font-semibold uppercase text-[#615EFC]'>Delivery Address</h1>
                     <p className='ml-4'>All fields are required *</p>
                     <form onSubmit={handleSubmit} className="card-body">
