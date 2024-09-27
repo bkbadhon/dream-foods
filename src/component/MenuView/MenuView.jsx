@@ -126,7 +126,7 @@ const MenuView = () => {
   return (
     <div className="w-11/12 mx-auto my-4">
       <div className="card-title px-4 md:text-2xl my-8 text-xl font-bold">
-        <h2>
+        <h2 className="capitalize">
           Foods / {menus.menu} / {menus.name}
         </h2>
       </div>
@@ -190,7 +190,7 @@ const MenuView = () => {
         </div>
       </div>
       <div>
-      <div className="text-left p-8">
+      <div className="text-left md:p-8">
       <div className="flex text-xl text-[#615EFC] items-center gap-2">
         <FaShare/>
         <h2 className=" mb-4 text-[#615EFC]">Share Your Feedback</h2>
@@ -216,7 +216,7 @@ const MenuView = () => {
         </div>
       </div>
       </div>
-      <div className="ml-8 mb-4">
+      <div className="md:ml-8 mb-4">
         <h2 className="text-xl mb-4 text-[#615EFC]">Others Feedback :</h2>
         {
           review.map((item,_id)=>

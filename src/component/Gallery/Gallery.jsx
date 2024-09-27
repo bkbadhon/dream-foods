@@ -14,11 +14,11 @@ const Gallery = () => {
 
             <div className='grid md:grid-cols-4 gap-8'>
 
-            <div className='col-span-2'><img className='lg:h-80 md:h-60 rounded-2xl w-full object-cover' src={biryani} alt="" /></div>
-            <div ><img className='lg:h-80 md:h-60 object-cover rounded-2xl w-full' src={pizza} alt="" /></div>
-            <div> <img className='lg:h-80 md:h-60 object-cover rounded-2xl w-full' src={salad} alt="" /></div>
-            <div><img className='lg:h-80 md:h-60 object-cover rounded-2xl w-full' src={drink} alt="" /></div>
-            <div><img className='lg:h-80 md:h-60 h-40 object-cover rounded-2xl w-full' src={roast} alt="" /></div>
+            <div className='col-span-2'><img className='lg:h-80 md:h-60  rounded-2xl w-full object-cover' src={biryani} alt="" /></div>
+            <div ><img className='lg:h-80 md:h-60 h-24 object-cover rounded-2xl w-full' src={pizza} alt="" /></div>
+            <div> <img className='lg:h-80 md:h-60 h-24 object-cover rounded-2xl w-full' src={salad} alt="" /></div>
+            <div><img className='lg:h-80 md:h-60 h-24 object-cover rounded-2xl w-full' src={drink} alt="" /></div>
+            <div><img className='lg:h-80 md:h-60 h-24 object-cover rounded-2xl w-full' src={roast} alt="" /></div>
             <div className='col-span-2'><img className='lg:h-80 md:h-60 rounded-2xl w-full object-cover' src={pizza1} alt="" /></div>
             
 

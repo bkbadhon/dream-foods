@@ -48,17 +48,17 @@ const Cart = () => {
         <div className="my-4 w-11/12 mx-auto">
       
 
-      <div className="overflow-x-auto">
-        <table className="table">
+      <div className="overflow-hidden">
+        <table className="md:table w-full table-sm">
           {/* head */}
-          <thead>
-            <tr className="bg-[#615EFC] text-white">
-              <th className="text-lg md:text-xl">#</th>
-              <th className="text-lg md:text-xl">Image</th>
-              <th className="text-lg md:text-xl">Quantity</th>
-              <th className="text-lg md:text-xl">Email</th>
-              <th className="text-lg md:text-xl">Price</th>
-              <th className="text-lg md:text-xl">Action</th>
+          <thead className=''>
+            <tr className="bg-[#615EFC]  text-white">
+              <th className="text-xs md:text-xl ">#</th>
+              <th className="text-xs md:text-xl ">Image</th>
+              <th className="text-xs md:text-xl ">Quantity</th>
+              <th className="text-xs hidden md:block md:text-xl ">Email</th>
+              <th className="text-xs md:text-xl ">Price</th>
+              <th className="text-xs md:text-xl ">Action</th>
             </tr>
           </thead>
 
@@ -66,24 +66,23 @@ const Cart = () => {
             <tr className='' key={item._id}>
               <th>{index + 1}</th>
               <td>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center md:gap-3 gap-1">
                   <div className="avatar">
-                    <div className="mask mask-squircle h-12 w-12">
+                    <div className="mask mask-squircle md:h-12 md:w-12 h-8 w-8">
                       <img src={item.photo} />
                     </div>
                   </div>
                   <div>
-                    <div className="font-bold">{item.name}</div>
+                    <div className="md:font-bold md:text-xl text-xs">{item.name}</div>
                   </div>
                 </div>
               </td>
               <td>{item.quantity}</td>
-              <td>{item.email}</td>
+              <td className='hidden md:block'>{item.email}</td>
               <td className='text-semibold'>${item.price * item.quantity}</td>
-              
-              <th>
-                <button onClick={()=>hanDelete(item._id)} className="btn text-[#615EFC] text-xl"><RiDeleteBin6Line /></button>
-              </th>
+              <td>
+                <button onClick={()=>hanDelete(item._id)} className="btn-sm p-2 text-[#615EFC] text-xs md:text-xl"><RiDeleteBin6Line /></button>
+              </td>
             </tr>
           ))}
         </table>

@@ -24,60 +24,60 @@ const Brands = () => {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 md:gap-8 gap-4">
         <div className="shadow-lg border-2 py-2 rounded-xl duration-1000 hover:text-white hover:bg-[#7E8EF1] hover:border-[#615EFC] my-auto">
-          <img className="w-40 object-cover h-40 mx-auto rounded-full" src={pizza} alt="" />
-          <h2 className="text-center text-2xl my-4 font-semibold">
+          <img className="md:w-40 object-cover md:h-40 h-20 w-20 mx-auto rounded-full" src={pizza} alt="" />
+          <h2 className="text-center md:text-2xl md:my-4 my-2 font-semibold">
             Special Pizza
           </h2>
           <div className="text-center mb-4">
             <Rating className="items-center"
-              emptySymbol={<CiStar className="text-2xl text-orange-500" />}
-              fullSymbol={<IoIosStar className="text-2xl text-orange-600" />}
+              emptySymbol={<CiStar className="md:text-2xl text-orange-500" />}
+              fullSymbol={<IoIosStar className="md:text-2xl text-orange-600" />}
               onChange={(value) => setRating(value)}
             />
           </div>
         </div>
         <div className="shadow-lg border-2 py-2 rounded-xl duration-1000 hover:text-white hover:bg-[#7E8EF1] hover:border-[#615EFC] my-auto">
-          <img className="w-40 object-cover h-40 mx-auto rounded-full" src={roast} alt="" />
-          <h2 className="text-center text-2xl my-4 font-semibold">Chicken Roast</h2>
+          <img className="md:w-40 object-cover md:h-40 w-20 h-20 mx-auto rounded-full" src={roast} alt="" />
+          <h2 className="text-center md:text-2xl md:my-4 my-2 font-semibold">Chicken Roast</h2>
           <div className="text-center mb-4">
             <Rating className="items-center"
-              emptySymbol={<CiStar className="text-2xl text-orange-500" />}
-              fullSymbol={<IoIosStar className="text-2xl text-orange-600" />}
+              emptySymbol={<CiStar className="md:text-2xl text-orange-500" />}
+              fullSymbol={<IoIosStar className="md:text-2xl text-orange-600" />}
               onChange={(value) => setRating(value)}
             />
           </div>
         </div>
         <div className="shadow-lg border-2 py-2 rounded-xl duration-1000 hover:text-white hover:bg-[#7E8EF1] hover:border-[#615EFC] my-auto">
-          <img className="w-40 object-cover h-40 mx-auto rounded-full" src={salad} alt="" />
-          <h2 className="text-center text-2xl my-4 font-semibold">Beautiful Salad</h2>
+          <img className="md:w-40 object-cover md:h-40 h-20 w-20 mx-auto rounded-full" src={salad} alt="" />
+          <h2 className="text-center text-2xl md:my-4 my-2 font-semibold">Beautiful Salad</h2>
           <div className="text-center mb-4">
             <Rating className="items-center"
-              emptySymbol={<CiStar className="text-2xl text-orange-500" />}
-              fullSymbol={<IoIosStar className="text-2xl text-orange-600" />}
+              emptySymbol={<CiStar className="md:text-2xl text-orange-500" />}
+              fullSymbol={<IoIosStar className="md:text-2xl text-orange-600" />}
               onChange={(value) => setRating(value)}
             />
           </div>
         </div>
         <div className="shadow-lg border-2 py-2 rounded-xl duration-1000 hover:text-white hover:bg-[#7E8EF1] hover:border-[#615EFC] my-auto">
-          <img className="w-40 object-cover h-40 mx-auto rounded-full" src={drink} alt="" />
-          <h2 className="text-center text-2xl my-4 font-semibold">Special Drinks</h2>
+          <img className="md:w-40 object-cover md:h-40 h-20 w-20 mx-auto rounded-full" src={drink} alt="" />
+          <h2 className="text-center text-2xl md:my-4 my-2 font-semibold">Special Drinks</h2>
           <div className="text-center mb-4">
             <Rating className="items-center"
-              emptySymbol={<CiStar className="text-2xl text-orange-500" />}
-              fullSymbol={<IoIosStar className="text-2xl text-orange-600" />}
+              emptySymbol={<CiStar className="md:text-2xl text-orange-500" />}
+              fullSymbol={<IoIosStar className="md:text-2xl text-orange-600" />}
               onChange={(value) => setRating(value)}
             />
           </div>
         </div>
         <div className="shadow-lg border-2 py-2 rounded-xl duration-1000 hover:text-white hover:bg-[#7E8EF1] hover:border-[#615EFC] my-auto">
-          <img className="w-40 object-cover h-40 mx-auto rounded-full" src={biriyani} alt="" />
-          <h2 className="text-center text-2xl my-4 font-semibold">Chicken Biryani</h2>
+          <img className="md:w-40 object-cover md:h-40 w-20 h-20 mx-auto rounded-full" src={biriyani} alt="" />
+          <h2 className="text-center text-2xl md:my-4 my-2 font-semibold">Chicken Biryani</h2>
           <div className="text-center mb-4">
             <Rating className="items-center"
-              emptySymbol={<CiStar className="text-2xl text-orange-500" />}
-              fullSymbol={<IoIosStar className="text-2xl text-orange-600" />}
+              emptySymbol={<CiStar className="md:text-2xl text-orange-500" />}
+              fullSymbol={<IoIosStar className="md:text-2xl text-orange-600" />}
               onChange={(value) => setRating(value)}
             />
           </div>

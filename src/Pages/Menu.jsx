@@ -63,7 +63,7 @@ const Menu = () => {
           </button>
         </div>
 
-        <div className="flex justify-left my-4 md:gap-12 gap-2">
+        <div className="md:flex mb-2 justify-left my-4 md:gap-12 gap-2">
           <button
             onClick={() => handleButtonClick('pizza')}
             className="btn-sm rounded-2xl text-white font-semibold hover:bg-[#615EFC] duration-600 bg-[#7E8EF1]"
@@ -90,13 +90,13 @@ const Menu = () => {
           </button>
           <button
             onClick={() => handleButtonClick('biryani')}
-            className="btn-sm rounded-2xl text-white font-semibold hover:bg-[#615EFC] duration-600 bg-[#7E8EF1]"
+            className="btn-sm rounded-2xl text-white mb-3 font-semibold hover:bg-[#615EFC] duration-600 bg-[#7E8EF1]"
           >
             Biryani
           </button>
           <button
             onClick={() => handleButtonClick('burger')}
-            className="btn-sm rounded-2xl text-white font-semibold hover:bg-[#615EFC] duration-600 bg-[#7E8EF1]"
+            className="btn-sm rounded-2xl text-white  font-semibold hover:bg-[#615EFC] duration-600 bg-[#7E8EF1]"
           >
             Burger
           </button>
@@ -105,14 +105,14 @@ const Menu = () => {
         <div className="divider divider-primary"></div>
       </div>
 
-      <div className="w-11/12 mx-auto justify-center grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 md:gap-16 items-center">
+      <div className="w-11/12 mx-auto justify-center grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 md:gap-16 gap-4 items-center">
         {filterMenu.map((item, index) => (
           <div key={index}>
             <div className="shadow-lg rounded-xl my-4 p-4 mx-auto">
-              <img className="w-full h-40 rounded-xl" src={item?.photo} alt={item.name} />
+              <img className="w-full md:h-40 h-32 rounded-xl" src={item?.photo} alt={item.name} />
               <div className="text-center my-2">
-                <h2 className="text-lg mb-2 font-semibold">{item.name}</h2>
-                <h2 className="mb-2 font-semibold">Price: ${item.price}</h2>
+                <h2 className="md:text-lg text-xs mb-2 font-semibold">{item.name}</h2>
+                <h2 className="mb-2  font-semibold">Price: ${item.price}</h2>
                 <Link to={`/menu/${item._id}`}>
                     <button className="bg-[#7E8EF1] hover:bg-[#615EFC] duration-600 btn-sm rounded-xl mx-auto text-white font-semibold">Details</button>
                 </Link>

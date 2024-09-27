@@ -32,7 +32,7 @@ const Users = () => {
     }
     return (
         <div>
-            <div className="overflow-x-auto">
+            <div className="">
                 <table className="table my-4">
                     {/* head */}
                     <thead>

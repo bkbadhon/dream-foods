@@ -12,25 +12,25 @@ const Service = () => {
                 <h2 className='text-4xl font-bold mb-2'>Our <span className='text-[#615EFC]'> Services</span></h2>
                 <p>Explore new tastes, enjoy limited-time offerings and savor the exceptional.</p>
             </div>
-            <div className='grid md:grid-cols-5 grid-cols-2 items-center my-8 lg:gap-24 gap-8'>
-                <div className='text-center mx-auto shadow-xl p-2 rounded-xl'>
-                    <Lottie className='w-40 h-36' animationData={animation1} loop={true}></Lottie>
+            <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 items-center my-8 lg:gap-24 gap-4'>
+                <div className='text-center h-48 mx-auto shadow-xl p-2 rounded-xl'>
+                    <Lottie className='md:w-40 md:h-36' animationData={animation1} loop={true}></Lottie>
                     <h2 className='text-xl mb-2 font-semibold'>Air condition</h2>
                 </div>
-                <div className='text-center mx-auto shadow-xl p-2 rounded-xl'>
-                    <Lottie className='w-40 h-36' animationData={animation2} loop={true}></Lottie>
+                <div className='text-center h-48 mx-auto  shadow-xl p-2 rounded-xl'>
+                    <Lottie className='md:w-40 md:h-36 py-8' animationData={animation2} loop={true}></Lottie>
                     <h2 className='text-xl mb-2 font-semibold'>Free Wifi</h2>
                 </div>
-                <div className='text-center mx-auto shadow-xl p-2 rounded-xl'>
-                    <Lottie className='w-40 h-36' animationData={animation3} loop={true}></Lottie>
+                <div className='text-center h-48 mx-auto shadow-xl p-2 rounded-xl'>
+                    <Lottie className='md:w-40 md:h-36' animationData={animation3} loop={true}></Lottie>
                     <h2 className='text-xl mb-2 font-semibold'>Discount Price</h2>
                 </div>
-                <div className='text-center mx-auto shadow-xl p-2 rounded-xl'>
-                    <Lottie className='w-40 h-36' animationData={animation4} loop={true}></Lottie>
+                <div className='text-center h-48 mx-auto shadow-xl p-2 rounded-xl'>
+                    <Lottie className='md:w-40 mda:h-36 py-5' animationData={animation4} loop={true}></Lottie>
                     <h2 className='text-xl mb-2 font-semibold'>Good Serve</h2>
                 </div>
-                <div className='text-center mx-auto shadow-xl p-2 rounded-xl'>
-                    <Lottie className='w-40 h-36' animationData={animation5} loop={true}></Lottie>
+                <div className='text-center h-48 mx-auto shadow-xl p-2 rounded-xl'>
+                    <Lottie className='md:w-40 md:h-36' animationData={animation5} loop={true}></Lottie>
                     <h2 className='text-xl mb-2 font-semibold'>Online Order</h2>
                 </div>
             </div>

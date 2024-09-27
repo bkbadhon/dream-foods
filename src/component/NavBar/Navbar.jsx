@@ -80,10 +80,10 @@ const Navbar = () => {
         <div className="relative mr-4 flex justify-center items-center">
           <button className=" flex justify-center items-center">
           <Link to={'/cart'}>
-            <IoCartOutline className="text-3xl text-white" />
+            <IoCartOutline className="text-3xl text-[#7E8EF1] md:text-white" />
           </Link>
           </button>
-            <div className="badge absolute text-black -right-2 -top-2 bg-white p-1">+{cart.length}</div>
+            <div className="badge absolute md:text-black -right-2 -top-2 bg-[#7E8EF1] text-white md:bg-white p-1">+{cart.length}</div>
 
         </div>
         {/* {user ? (

@@ -8,19 +8,19 @@ const Offer = () => {
     <div className="my-24">
       <div className="relative">
         <img
-          className="w-full h-72 bg-[#0000008c] object-cover"
+          className="w-full md:h-72 h-48 bg-[#0000008c] object-cover"
           src={img}
           alt=""
         />
         <div className="absolute md:flex justify-around items-center inset-0 text-white bg-black opacity-70">
           <div>
-            <h2 className="italic text-3xl my-4">
+            <h2 className="italic ml-2 text-3xl my-4">
               Celebrate at one of the most awarded restaurant
             </h2>
-            <p className="text-lg mb-4">only this year our business launch</p>
+            <p className="text-lg ml-2 mb-4">only this year our business launch</p>
           </div>
           <div className="">
-            <button className="btn-sm  bg-[#7E8EF1] hover:bg-white duration-1000 hover:text-[#7E8EF1] rounded-2xl">
+            <button className="btn-sm ml-2  bg-[#7E8EF1] hover:bg-white duration-1000 hover:text-[#7E8EF1] rounded-2xl">
               Get Order
             </button>
           </div>
@@ -41,33 +41,35 @@ const Offer = () => {
         </div>
 
         <div className="md:flex w-11/12 mx-auto p-2 gap-4 my-8 items-center">
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 mb-4">
             <img src={img} alt="" />
           </div>
 
           <div className="md:w-1/2">
             <div className="flex justify-between mb-6 items-center">
-              <img className="w-48" src={biryani} alt="" />
+              <img className="w-48 h-40" src={biryani} alt="" />
 
-                  <h2>Spicy Club      ------</h2>
-                <div className="">
+                <div className="flex gap-4 md:gap-20">
+                  <h2 className="font-semibold">Spicy Club</h2>
 
                   <h2>$42</h2>
                 </div>
             </div>
             <div className="flex justify-between mb-6 items-center">
-              <img className="w-48" src={salad} alt="" />
-                <h2>Spicy Club      ------</h2>
-              <div className="">
-                <h2>$42</h2>
-              </div>
+              <img className="w-48 h-40" src={salad} alt="" />
+                <div className="flex gap-4 md:gap-20">
+                  <h2 className="font-semibold">Spicy Club</h2>
+
+                  <h2>$42</h2>
+                </div>
             </div>
             <div className="flex justify-between  items-center">
-              <img className="w-48" src={drink} alt="" />
-                <h2>Spicy Club      ------</h2>
-              <div className="">
-                <h2>$42</h2>
-              </div>
+              <img className="w-48 h-40" src={drink} alt="" />
+              <div className="flex gap-4 md:gap-20">
+                  <h2 className="font-semibold">Spicy Club</h2>
+
+                  <h2>$42</h2>
+                </div>
             </div>
           </div>
         </div>

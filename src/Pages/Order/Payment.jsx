@@ -53,7 +53,7 @@ const Payment = () => {
                                         <img className='md:w-20 w-12 object-cover md:h-20 h-12 rounded-xl' src={item.photo} alt="" />
                                         <h2 className='md:text-xl text-xs font-semibold'>{item.name}</h2>
                                         <p className='font-semibold text-[#615EFC]'>Qnt : {item.quantity}</p>
-                                        <h2 className='font-semibold ml-8 text-2xl'>${item.price * item.quantity}</h2>
+                                        <h2 className='font-semibold ml-8 md:text-2xl'>${item.price * item.quantity}</h2>
                                     </div>
                                 </div>
                             )
